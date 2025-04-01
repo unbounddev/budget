@@ -1,19 +1,13 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import Button from 'primevue/button'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <Button label="Verify" />
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <main>
+    <component :is="$route.meta.layout || 'div'">
+      <RouterView />
+    </component>
+  </main>
 </template>
 
 <style scoped></style>
