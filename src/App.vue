@@ -26,7 +26,7 @@ const items = [
           <Menu style="border: none" :model="items">
             <template #item="{ item, props }">
               <RouterLink :to="item.route" v-slot="{ href, navigate }" custom>
-                <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+                <a :href="href" v-bind="props.action" @click="navigate">
                   <!-- <span :class="item.icon" /> -->
                   <span style="font-weight: bold">{{ item.label }}</span>
                 </a>
@@ -36,6 +36,9 @@ const items = [
         </div>
       </template>
     </Drawer>
+    <span style="cursor: pointer" @click="visible = true">
+      <MenuIcon :size="28" />
+    </span>
   </header>
   <RouterView />
 </template>
